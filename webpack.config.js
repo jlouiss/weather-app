@@ -1,5 +1,5 @@
-const path = require('path')
-// const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const path = require('path');
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
   entry: './js/weather.js',
@@ -20,15 +20,12 @@ module.exports = {
       },
       {
         test: /\.sass$/,
-        // use: ExtractTextPlugin.extract({
-        //   use: ['css-loader', 'sass-loader']
-        // })
         use: ['style-loader', 'css-loader', 'sass-loader']
       }
     ]
   },
 
-  // plugins: [
-  //   new ExtractTextPlugin('./styles.css')
-  // ]
-}
+  plugins: [
+    new UglifyJSPlugin()
+  ]
+};

@@ -130,3 +130,5 @@ $(document).ready(function() {
   };
 
 });
+
+console.log('Source code available here: https://github.com/jlouiss/weather-app');
